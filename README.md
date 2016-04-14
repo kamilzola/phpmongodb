@@ -22,7 +22,9 @@ Installation
      'port'=>"27017",
      'timeout'=>0,
    - Make authentication = TRUE for using your MongoDB user and password.
-   - Make authorization['readonly'] = TRUE for making your MongoDb readonly.
+   - Make authorization['readonly'] = FALSE for making your MongoDb writable.
+   - Make execute = TRUE to enable execution of arbitrary commands (not safe for read-only instances).
+   - Make filter = TRUE and add your databases names to showOnly array to enable database filtering
 6. Visit the index.php in your browser, for example: http://localhost/phpmongodb
 7. Login with admin username and password, which is set "admin" and "admin" as default
 8. Start Playing with your MongoDBs!
