@@ -19,6 +19,9 @@
                     <?php
                     if (isset($this->data['dbList']['databases']) && is_array($this->data['dbList']['databases'])) {
                         foreach ($this->data['dbList']['databases'] as $db) {
+                            if (Config::$filter && !in_array($db['name'], Config::$showOnly)){
+                                continue;
+                            }
                             ?>
                             <tr>
                                 <td><a href="<?php echo Theme::URL('Collection/Index', array('db' => $db['name'])); ?>"><?php echo $db['name']; ?></i></td>

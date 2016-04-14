@@ -29,6 +29,13 @@ class Config {
     public static $authorization = array(
         'readonly'=>true,
     );
+    
+    // enable executing arbitrary commands, should be disabled for read only instances
+    public static $execute = false;
+
+    // if filter is on - show only listed databases
+    public static $filter = false;
+    public static $showOnly = array();
 
     /**
      *

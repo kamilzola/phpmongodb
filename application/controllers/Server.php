@@ -10,6 +10,12 @@ defined('PMDDA') or die('Restricted access');
 class ServerController extends Controller {
     
     public function Execute(){
+        
+        if (!Config::$execute){
+            $this->display('executedisabled', array());
+            return;
+        }
+        
         $response=NULL;
         $model=new Database();
         if($this->request->isPost())

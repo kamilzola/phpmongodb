@@ -56,8 +56,10 @@
         <div class="navbar">
             <div class="navbar-inner">
                 <ul class="nav pull-right">
-                    <?php if($isLogedIn){ ?>
+                    <?php if($isLogedIn && Config::$execute){ ?>
                     <li><a href="<?php echo Theme::URL('Server/Execute'); ?>" ><?php echo I18n::t('Execute');?></a></li>
+                    <?php }?>
+                    <?php if($isLogedIn){ ?>
                     <li><a href="<?php echo Theme::URL('Database/Index'); ?>" ><?php echo I18n::t('DB');?></a></li>
                     <li><a href="<?php echo Theme::URL('Index/Status'); ?>" ><?php echo I18n::t('STATUS');?></a></li>
                     <li><a href="<?php echo Theme::URL('Login/Logout'); ?>"  ><?php echo I18n::t('LOGOUT');?></a></li>

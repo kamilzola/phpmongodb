@@ -12,6 +12,9 @@
         <ul  class="nav nav-list collapse in bodymargin">
             <?php
             foreach ($dbList['databases'] as $db) {
+                if (Config::$filter && !in_array($db['name'], Config::$showOnly)){
+                    continue;
+                }
                 ?>
                 <a href="<?php echo Theme::URL('Collection/Index', array('db' => $db['name'])); ?>" class="nav-header" >
                     <i class="icon-database"></i><?php echo $db['name']; ?><span class="label label-info"><?php echo !empty($db['noOfCollecton'])?$db['noOfCollecton']:'';?></span></a>
@@ -22,7 +25,9 @@
         <?php
     } else {
         foreach ($dbList['databases'] as $db) {
-
+            if (Config::$filter && !in_array($db['name'], Config::$showOnly)){
+                continue;
+            }
             if ($dbName == $db['name']) {
                 $collectionList = Widget::get('CollectonList');
                 
