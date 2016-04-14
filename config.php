@@ -27,7 +27,7 @@ class Config {
         'password' => 'admin'
     );
     public static $authorization = array(
-        'readonly'=>false,
+        'readonly'=>true,
     );
 
     /**
